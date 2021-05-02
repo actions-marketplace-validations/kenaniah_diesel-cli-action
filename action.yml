@@ -1,4 +1,4 @@
-name: "Diesel CLI"
+name: "Diesel CLI - database setup"
 description: "Run Diesel CLI in Actions"
 inputs:
   migration_directories:

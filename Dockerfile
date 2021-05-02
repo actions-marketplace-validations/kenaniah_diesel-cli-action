@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM rust:slim
 
 RUN apt-get update -qq && \
     apt-get install -y libpq-dev libsqlite3-dev default-libmysqlclient-dev && \

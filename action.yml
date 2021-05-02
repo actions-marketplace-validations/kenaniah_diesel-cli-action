@@ -1,11 +1,5 @@
 name: "Diesel CLI - database setup"
 description: "Run Diesel CLI in Actions"
-inputs:
-  working_directories:
-    description: "The list of working directories to run against"
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.working_directories }}

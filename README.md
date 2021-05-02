@@ -1,6 +1,6 @@
 # diesel-cli-action
 
-This GitHub action runs `diesel database setup` within the given working directories. 
+This GitHub action runs `diesel database setup` within the given working directories.
 
 ## Example Worklow
 ```yaml
@@ -37,9 +37,8 @@ jobs:
           override: true
       - name: Provision the database
         uses: docker://kenaniah/diesel-cli-action:v1
-        with:
-          working_directories: ./
         env:
+          WORKING_DIRECTORIES: db/
           DATABASE_URL: postgres://runner@postgres/testing_db
       - uses: actions-rs/cargo@v1
         with:
@@ -54,6 +53,6 @@ If you have multiple databases that are managed by diesel, you can pass in multi
 # ...
       - name: Provision each database
         uses: docker://kenaniah/diesel-cli-action:v1
-        with:
-          working_directories: first_db/,second_db/
+        env:
+          WORKING_DIRECTORIES: first_db/,second_db/
 ```

@@ -36,7 +36,7 @@ jobs:
           toolchain: stable
           override: true
       - name: Provision the database
-        uses: kenaniah/diesel-cli-action@v1
+        uses: docker://kenaniah/diesel-cli-action:v1
         with:
           working_directories: ./
         env:
@@ -53,7 +53,7 @@ If you have multiple databases that are managed by diesel, you can pass in multi
 ```yaml
 # ...
       - name: Provision each database
-        uses: kenaniah/diesel-cli-action@v1
+        uses: docker://kenaniah/diesel-cli-action:v1
         with:
           working_directories: first_db/,second_db/
 ```
